@@ -1,5 +1,8 @@
 import hazelcast
 
+def print_on_message(topic_message):
+    print("Este es el mensaje: ", topic_message.message)
+
 client = hazelcast.HazelcastClient(
     cluster_name="dev",
     cluster_members=[
@@ -19,6 +22,10 @@ my_map.get("key")
 # Concurrent Map methods, optimistic updating
 #my_map.put_if_absent("somekey", "somevalue")
 #my_map.replace_if_same("key", "value", "newvalue")
+
+topic = client.get_topic("myTopic").blocking()
+topic.add_listener(print_on_message)
+topic.publish("Funciono el topico")
 
 
 client.shutdown()
