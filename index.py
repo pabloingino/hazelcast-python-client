@@ -24,8 +24,9 @@ my_map.get("key")
 #my_map.replace_if_same("key", "value", "newvalue")
 
 topic = client.get_topic("myTopic").blocking()
-topic.add_listener(print_on_message)
 topic.publish("Funciono el topico")
+topic.add_listener(print_on_message)
+
 
 
 client.shutdown()
