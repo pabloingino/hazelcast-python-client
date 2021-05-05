@@ -10,7 +10,7 @@ client = hazelcast.HazelcastClient(
     ]
 )
 # Get the Distributed Map from Cluster.
-my_map = client.get_map("my-distributed-map").blocking()
+my_map = client.get_map("map-testing").blocking()
 # Standard Put and Get
 my_map.put("key", "value")
 my_map.get("key")
