@@ -29,4 +29,4 @@ topic.add_listener(print_on_message)
 
 
 
-client.shutdown()
+#client.shutdown()
