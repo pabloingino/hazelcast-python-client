@@ -15,8 +15,8 @@ client = hazelcast.HazelcastClient(
 # Get the Distributed Map from Cluster.
 my_map = client.get_map("map-testing").blocking()
 # Standard Put and Get
-my_map.put("key2", "value2")
-my_map.put("key3", "value3")
+my_map.put("key20", "value20")
+my_map.put("key30", "value30")
 my_map.put("client_id", "88223")
 my_map.get("key")
 # Concurrent Map methods, optimistic updating
